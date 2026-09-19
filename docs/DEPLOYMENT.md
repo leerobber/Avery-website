@@ -1,10 +1,14 @@
 # Deploying to Cloudflare Pages
 
 This repo deploys via GitHub Actions (`.github/workflows/deploy.yml`) using
-[`cloudflare/pages-action`](https://github.com/cloudflare/pages-action). No
-local build step is required — it's a static site plus a couple of
-[Pages Functions](https://developers.cloudflare.com/pages/functions/) in
+[`cloudflare/wrangler-action`](https://github.com/cloudflare/wrangler-action) (running
+`wrangler pages deploy`). No local build step is required — it's a static site plus a
+couple of [Pages Functions](https://developers.cloudflare.com/pages/functions/) in
 `functions/`.
+
+> Note: this repo previously used `cloudflare/pages-action`, which Cloudflare archived
+> and removed from GitHub on 2026-09-18. `wrangler-action` is the maintained replacement
+> for both Workers and Pages deploys.
 
 ## One-time setup
 
