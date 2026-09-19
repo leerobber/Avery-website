@@ -9,9 +9,9 @@ Stripe Checkout/Payment Intents must be created **server-side** with your secret
 Never put `STRIPE_SECRET_KEY` in client-side JavaScript — treat it like a password. The
 publishable key (`pk_...`) is the only Stripe key that's safe in the browser.
 
-This project ships as static HTML with Cloudflare Pages Functions available in
-`functions/` for exactly this kind of server-side logic — see
-`docs/BACKEND_API_SETUP.md` for the broader picture.
+This project ships as static HTML plus a single Cloudflare Worker (`src/worker.js`) for
+exactly this kind of server-side logic — see `docs/BACKEND_API_SETUP.md` for the
+broader picture.
 
 ## 1. Set up Stripe
 
@@ -24,8 +24,9 @@ This project ships as static HTML with Cloudflare Pages Functions available in
 
 ## 2. Store the keys
 
-Add to `.env` locally (never commit it) and to Cloudflare Pages project environment
-variables for deployed environments:
+Add to `.env` locally (never commit it) and to the Worker's environment variables/secrets
+(Cloudflare dashboard → Workers & Pages → avery-website → Settings → Variables and
+Secrets) for deployed environments:
 
 ```
 STRIPE_PUBLISHABLE_KEY=pk_test_...
@@ -35,10 +36,11 @@ STRIPE_WEBHOOK_SECRET=whsec_...   # from step 4 below
 
 ## 3. Create a Checkout Session endpoint
 
-Add a Pages Function, e.g. `functions/api/create-checkout-session.js`:
+Add a route to `src/worker.js`'s `fetch()` handler, e.g. matching `POST
+/api/create-checkout-session`:
 
 ```js
-export async function onRequestPost({ request, env }) {
+async function handleCreateCheckoutSession(request, env) {
   const { priceId } = await request.json();
 
   const stripeRes = await fetch('https://api.stripe.com/v1/checkout/sessions', {
@@ -73,9 +75,9 @@ SDK is more ergonomic.)
 
 ## 4. Handle webhooks
 
-Create `functions/api/stripe-webhook.js` to receive events (`checkout.session.completed`,
-`invoice.paid`, `customer.subscription.deleted`, etc.) and update your own records
-(e.g. a Supabase table — see `docs/BACKEND_API_SETUP.md`).
+Add another route in `src/worker.js` (e.g. `POST /api/stripe-webhook`) to receive events
+(`checkout.session.completed`, `invoice.paid`, `customer.subscription.deleted`, etc.) and
+update your own records (e.g. a Supabase table — see `docs/BACKEND_API_SETUP.md`).
 
 1. Stripe dashboard → **Developers** → **Webhooks** → **Add endpoint**.
 2. Endpoint URL: `https://<your-domain>/api/stripe-webhook`.
@@ -87,7 +89,7 @@ Create `functions/api/stripe-webhook.js` to receive events (`checkout.session.co
 ## 5. Go-live checklist
 
 - [ ] Real products/prices created in **Live mode** (test mode data doesn't carry over).
-- [ ] Live keys set in Cloudflare Pages **Production** environment variables only.
+- [ ] Live keys set in the Worker's **Production** environment variables/secrets only.
 - [ ] Webhook endpoint re-created for Live mode with its own signing secret.
 - [ ] Success/cancel URLs point at the real production domain.
 - [ ] Terms/Privacy pages linked from checkout (Stripe may require this for some account types).
