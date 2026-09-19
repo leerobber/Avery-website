@@ -1,4 +1,4 @@
-name: Deploy to Cloudflare Pages
+name: Deploy to Cloudflare Workers
 
 on:
   push:
@@ -8,6 +8,9 @@ on:
 
 jobs:
   deploy:
+    # Only deploy on pushes to main or manual runs. Pull request pushes never
+    # carry deploy credentials here, so don't attempt (and fail) a deploy for them.
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: read

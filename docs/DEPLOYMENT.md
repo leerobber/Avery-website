@@ -20,16 +20,19 @@ managed entirely from the Cloudflare dashboard under **Workers & Pages → avery
 
 **2. The `.github/workflows/deploy.yml` GitHub Actions workflow**, added for an
 explicit, auditable CI step. It deploys the same Worker via `wrangler deploy` using
-`cloudflare/wrangler-action`.
+`cloudflare/wrangler-action`, but only on pushes to `main` (or manual runs) — it's
+skipped on pull request events, since deploy credentials shouldn't be used to push to
+production from a PR branch.
 
 Both target the same Worker (`avery-website`), so running both isn't harmful — the
 one that finishes last "wins" — but it's redundant. Pick one:
 
 - Prefer the **native integration** (option 1) if you want zero-secret, zero-maintenance
   deploys — it's already working.
-- Prefer **GitHub Actions** (option 2) if you want deploy status as a required PR check,
-  or plan to add build/test steps before deploying. If so, consider disabling the native
-  build in the Cloudflare dashboard to avoid duplicate deploy noise on every push.
+- Prefer **GitHub Actions** (option 2) if you want an explicit, auditable production
+  deploy step, or plan to add build/test steps before deploying. If so, consider
+  disabling the native build in the Cloudflare dashboard (or restricting it to non-production
+  branches) to avoid duplicate deploy noise on every push to `main`.
 
 ## One-time setup for the GitHub Actions path
 
