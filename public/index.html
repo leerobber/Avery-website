@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avery — Your AI Assistant</title>
+  <meta name="description" content="Avery is an AI-powered assistant that helps you get more done. Placeholder copy — replace with real product description." />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Tailwind CSS (CDN, no build step required) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-257655184"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-257655184');
+  </script>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-100">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/" class="flex items-center gap-2 font-semibold text-lg">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-white">A</span>
+        Avery
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#features" class="hover:text-slate-900">Features</a>
+        <a href="#how-it-works" class="hover:text-slate-900">How it works</a>
+        <a href="#pricing" class="hover:text-slate-900">Pricing</a>
+        <a href="#contact" class="hover:text-slate-900">Contact</a>
+      </div>
+      <a href="#contact" class="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700 transition">
+        Get Started
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 pt-20 pb-24 text-center">
+    <p class="inline-block rounded-full bg-brand-50 px-4 py-1 text-sm font-medium text-brand-700 mb-6">
+      Placeholder tagline — replace before launch
+    </p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900">
+      Meet Avery, your AI assistant<br class="hidden sm:block" /> for getting things done.
+    </h1>
+    <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-600">
+      This is placeholder copy. Replace with a real description of what Avery does, who it's for,
+      and why it matters — one or two sentences that make the value obvious.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#contact" class="w-full sm:w-auto rounded-lg bg-brand-600 px-6 py-3 text-white font-semibold hover:bg-brand-700 transition">
+        Get Started
+      </a>
+      <a href="#features" class="w-full sm:w-auto rounded-lg border border-slate-200 px-6 py-3 font-semibold text-slate-700 hover:bg-slate-50 transition">
+        Learn more
+      </a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="bg-slate-50 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold tracking-tight">What Avery does</h2>
+        <p class="mt-4 text-slate-600">Placeholder feature summaries — replace with real capabilities.</p>
+      </div>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+          <div class="h-10 w-10 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">1</div>
+          <h3 class="font-semibold text-lg mb-2">Feature one</h3>
+          <p class="text-slate-600 text-sm">Placeholder description of the first key feature or benefit.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+          <div class="h-10 w-10 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">2</div>
+          <h3 class="font-semibold text-lg mb-2">Feature two</h3>
+          <p class="text-slate-600 text-sm">Placeholder description of the second key feature or benefit.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+          <div class="h-10 w-10 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">3</div>
+          <h3 class="font-semibold text-lg mb-2">Feature three</h3>
+          <p class="text-slate-600 text-sm">Placeholder description of the third key feature or benefit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold tracking-tight">How it works</h2>
+        <p class="mt-4 text-slate-600">Placeholder steps — replace with the real onboarding flow.</p>
+      </div>
+      <ol class="grid gap-8 sm:grid-cols-3">
+        <li class="text-center">
+          <div class="mx-auto h-12 w-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold mb-4">1</div>
+          <h3 class="font-semibold mb-2">Sign up</h3>
+          <p class="text-slate-600 text-sm">Placeholder step description.</p>
+        </li>
+        <li class="text-center">
+          <div class="mx-auto h-12 w-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold mb-4">2</div>
+          <h3 class="font-semibold mb-2">Connect your data</h3>
+          <p class="text-slate-600 text-sm">Placeholder step description.</p>
+        </li>
+        <li class="text-center">
+          <div class="mx-auto h-12 w-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold mb-4">3</div>
+          <h3 class="font-semibold mb-2">Start working with Avery</h3>
+          <p class="text-slate-600 text-sm">Placeholder step description.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="bg-slate-50 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-4">
+        <h2 class="text-3xl font-bold tracking-tight">Pricing</h2>
+        <p class="mt-4 text-slate-600">Illustrative pricing tiers — confirm real plans and prices in Stripe before launch. See <code class="text-xs bg-slate-200 rounded px-1 py-0.5">docs/STRIPE_INTEGRATION.md</code>.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3 mt-12">
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <h3 class="font-semibold text-lg">Starter</h3>
+          <p class="mt-2 text-3xl font-bold">$0<span class="text-base font-normal text-slate-500">/mo</span></p>
+          <p class="mt-4 text-sm text-slate-600">Placeholder plan description.</p>
+          <a href="#contact" class="mt-6 block text-center rounded-lg border border-slate-200 px-4 py-2 font-semibold hover:bg-slate-50">Get started</a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border-2 border-brand-600 relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Popular</span>
+          <h3 class="font-semibold text-lg">Pro</h3>
+          <p class="mt-2 text-3xl font-bold">$29<span class="text-base font-normal text-slate-500">/mo</span></p>
+          <p class="mt-4 text-sm text-slate-600">Placeholder plan description.</p>
+          <a href="#contact" class="mt-6 block text-center rounded-lg bg-brand-600 text-white px-4 py-2 font-semibold hover:bg-brand-700">Get started</a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <h3 class="font-semibold text-lg">Enterprise</h3>
+          <p class="mt-2 text-3xl font-bold">Contact us</p>
+          <p class="mt-4 text-sm text-slate-600">Placeholder plan description.</p>
+          <a href="#contact" class="mt-6 block text-center rounded-lg border border-slate-200 px-4 py-2 font-semibold hover:bg-slate-50">Contact sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section id="contact" class="py-24">
+    <div class="max-w-xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold tracking-tight">Get in touch</h2>
+      <p class="mt-4 text-slate-600">
+        This form posts to <code class="text-xs bg-slate-100 rounded px-1 py-0.5">/api/contact</code>, a stub
+        Cloudflare Pages Function. Wire it up to email/Supabase/CRM per
+        <code class="text-xs bg-slate-100 rounded px-1 py-0.5">docs/BACKEND_API_SETUP.md</code>.
+      </p>
+      <form id="contact-form" class="mt-8 space-y-4 text-left">
+        <div>
+          <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
+          <input id="name" name="name" type="text" required
+            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+          <input id="email" name="email" type="email" required
+            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
+          <textarea id="message" name="message" rows="4" required
+            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+        </div>
+        <button type="submit"
+          class="w-full rounded-lg bg-brand-600 px-4 py-3 font-semibold text-white hover:bg-brand-700 transition">
+          Send message
+        </button>
+        <p id="contact-status" class="text-sm text-slate-500" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-100 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <p>&copy; <span id="year"></span> Avery. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-slate-700">Privacy</a>
+        <a href="#" class="hover:text-slate-700">Terms</a>
+        <a href="#" class="hover:text-slate-700">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

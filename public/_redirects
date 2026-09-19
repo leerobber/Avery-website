@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects file.
+# Example: 301 redirect www to apex (uncomment and set your domain once configured).
+# https://www.avery.com/* https://avery.com/:splat 301!

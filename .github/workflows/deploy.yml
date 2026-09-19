@@ -1,0 +1,29 @@
+name: Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    # Only deploy on pushes to main or manual runs. Pull request pushes never
+    # carry deploy credentials here, so don't attempt (and fail) a deploy for them.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Publish to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
